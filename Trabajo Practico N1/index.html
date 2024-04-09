@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <title>Trabajo Practico N°1</title>
+</head>
+<body>
+    <nav class="navbar bg-warning">
+        <div class="container-fluid">
+          <span class="navbar-brand h4">T.P. N°1</span>
+        </div>
+    </nav>
+    
+    <div class="container">
+        
+        <h2 class="display-6 mt-3">Alta producto</h2>
+
+        <div class="row">
+
+            <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label">Descripcion</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-3">
+                    <label class="form-label">Fecha Alta</label>
+                    <input type="date" class="form-control">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-3">
+                    <label class="form-label">Hora Alta</label>
+                    <input type="time" class="form-control">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">   
+
+            <div class="col-6">
+                    <div class="mb-3">
+                        <label class="form-label">Detalle</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="row row-cols-2">
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="text" class="form-control" placeholder="Precio de Venta">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">N°</span>
+                                <input type="text" class="form-control" placeholder="Stock">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <select class="form-select">
+                                <option selected>Categoria...</option>
+                                <option value="1">Cat 1</option>
+                                <option value="2">Cat 2</option>
+                                <option value="3">Cat 3</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-success" type="button">Guardar Producto</button>
+                    </div>
+            
+            </div>
+            <div class="col-6">
+                    <div class="card" >
+                        <img src="img/img_bootstrap.jpg" class="card-img-top p-3" alt="">
+                    </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+</body>
+</html>
