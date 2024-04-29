@@ -17,14 +17,25 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="mb-3">
-                    <label for="" class="form-label">Nombre</label>
-                    <input id="inp_nombre" type="text" class="form-control">
+                    <div class="form-label">Operacion</div>
+                    <select class="form-select" id="slt_operacion">
+                        <option selected disabled value="-1">Seleccione una operacion</option>
+                        <option value="0">Suma</option>
+                        <option value="1">Resta</option>
+                        <option value="2">Producto</option>
+                        <option value="3">Division</option>
+                    </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Apellido</label>
-                    <input id="inp_apellido" type="text" class="form-control">
+                    <label for="" class="form-label">Numero 1</label>
+                    <input id="inp_d1" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Numero 2</label>
+                    <input id="inp_d2" type="number" class="form-control">
                 </div>
                 <button id="btn_aceptar" class="btn btn-success">Aceptar</button>
+                <h3 id="h_resultado"></h3>
             </div>
         </div>
     </div>
