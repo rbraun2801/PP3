@@ -1,5 +1,3 @@
-//Funcion obtengoDatos y llamo a calcular
-
 function getDatos(){
     const d1=document.getElementById("inp_d1").value
     const d2=document.getElementById("inp_d2").value
