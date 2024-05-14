@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Bootstrap/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <title>Calcular Ley Ohm</title>
+</head>
+<body>
+    <nav class="navbar bg-primary">
+        <div class="container-fluid">
+          <span class="navbar-brand">Calculadora de ley Ohm</span>
+        </div>
+      </nav>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="mb-3">
+                    <div class="form-label">Operacion</div>
+                    <select class="form-select" id="slt_operacion">
+                        <option selected disabled value="-1">Seleccione una opcion</option>
+                        <option value="0">Resistencia</option>
+                        <option value="1">Intensidad</option>
+                        <option value="2">Voltaje</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label id="label1" class="form-label"></label>
+                    <input id="inp_d1" type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label id="label2" class="form-label"></label>
+                    <input id="inp_d2" type="number" class="form-control">
+                </div>
+                <button id="btn_calcular" class="btn btn-success">Calcular</button>
+                <input type="text" id="resultado" class="form-control" disabled>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script
+</body>
+</html>
