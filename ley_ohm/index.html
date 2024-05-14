@@ -7,16 +7,16 @@
     <title>Calcular Ley Ohm</title>
 </head>
 <body>
-    <nav class="navbar bg-primary">
-        <div class="container-fluid">
-          <span class="navbar-brand">Calculadora de ley Ohm</span>
+    <nav class="navbar bg-warning">
+        <div class="container-fluid justify-content-center">
+          <span class="navbar-brand ">Calculadora de ley Ohm</span>
         </div>
       </nav>
-    <div class="container mt-3">
+    <div class="container-fluid mt-3 d-flex justify-content-center">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="mb-3">
-                    <div class="form-label">Operacion</div>
+            <div class="col-auto text-center">
+                <div class="mb-2">
+                    <label class="form-label align-items-center">Operacion</label>
                     <select class="form-select" id="slt_operacion">
                         <option selected disabled value="-1">Seleccione una opcion</option>
                         <option value="0">Resistencia</option>
@@ -24,18 +24,33 @@
                         <option value="2">Voltaje</option>
                     </select>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                     <label id="label1" class="form-label"></label>
                     <input id="inp_d1" type="number" class="form-control">
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                     <label id="label2" class="form-label"></label>
                     <input id="inp_d2" type="number" class="form-control">
                 </div>
-                <button id="btn_calcular" class="btn btn-success">Calcular</button>
-                <input type="text" id="resultado" class="form-control" disabled>
+                   
             </div>
+            <div class="col-auto text-center">
+                <div class="mb-5">
+                    <label class="form-label">Resultado</label>
+                    <input type="text" id="resultado" class="form-control" disabled>
+                </div>
+                <div class="mb-3">
+                    <button id="btn_calcular" class="btn btn-success">Calcular</button>
+                </div>
+
+            </div>
+
         </div>
+        <div class="row">
+
+          
+        </div>
+            
     </div>
     <script src="main.js"></script
 </body>

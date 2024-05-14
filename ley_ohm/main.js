@@ -30,23 +30,29 @@ function calcular(op,d1,d2){
    
 }
 
+const btn_datos=document.getElementById("btn_calcular")
+btn_datos.addEventListener("click", getDatos)
+
 function seteoLabel() {
-    let op=document.getElementById("slt_operacion").value
-    if(op== 0 ){
-        document.getElementById("label1").innerHTML='<h3 class="text-success">Voltaje</h3>';
-        document.getElementById("label2").innerText="Intensidad";
-    }else if(op== 1 ){
-        document.getElementById("label1").innerText="Voltaje";
-        document.getElementById("label2").innerText="Resistencia";
-    }else if(op== 2 ){
-        document.getElementById('label1').innerText="Intensidad";
-        document.getElementById('label2').innerText="Resistencia";
+    const op=document.getElementById("slt_operacion").value
+    const label1=document.getElementById("label1")
+    const label2=document.getElementById("label2")
+    if( op == 0 ){
+        label1.innerHTML='<span class="text-success">Voltaje</span>';
+        label2.innerHTML='<span class="text-success">Intensidad</span>';
+    }else if( op == 1 ){
+        label1.innerText='<span class="text-warning">Voltaje</span>';
+        label2.innerText='<span class="text-warning">Resistencia</span>';
+    }else if( op == 2 ){
+        label1.innerText='<span class="text-success">Intensidad</span>';
+        label2.innerText='<span class="text-success">Resistencia</span>';
         
     }
 }
 
-document.getElementById("slt_operacion").addEventListener("change", seteoLabel)
-document.getElementById("btn_calcular").addEventListener("click", getDatos)
+const ch_operacion=document.getElementById("slt_operacion")
+ch_operacion.addEventListener("change", seteoLabel)
+
 
     
 
