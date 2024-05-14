@@ -5,7 +5,7 @@ function getDatos(){
     const op=document.getElementById("slt_operacion").value
     
     let resultado=calcular(op,d1,d2)
-    document.getElementById("resultado").value = resultado
+    document.getElementById("resultado").value = resultado.toFixed(2)
     console.log(resultado)
     
 
@@ -42,8 +42,8 @@ function seteoLabel() {
         label1.innerHTML='<span class="text-warning">Voltaje</span>';
         label2.innerHTML='<span class="text-warning">Resistencia</span>';
     }else if( op == 2 ){
-        label1.innerHTML='<span class="text-success">Intensidad</span>';
-        label2.innerHTML='<span class="text-success">Resistencia</span>';
+        label1.innerHTML='<span class="text-info">Intensidad</span>';
+        label2.innerHTML='<span class="text-info">Resistencia</span>';
         
     }
 }
