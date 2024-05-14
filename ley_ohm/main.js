@@ -39,11 +39,11 @@ function seteoLabel() {
         label1.innerHTML='<span class="text-success">Voltaje</span>';
         label2.innerHTML='<span class="text-success">Intensidad</span>';
     }else if( op == 1 ){
-        label1.innerText='<span class="text-warning">Voltaje</span>';
-        label2.innerText='<span class="text-warning">Resistencia</span>';
+        label1.innerHTML='<span class="text-warning">Voltaje</span>';
+        label2.innerHTML='<span class="text-warning">Resistencia</span>';
     }else if( op == 2 ){
-        label1.innerText='<span class="text-success">Intensidad</span>';
-        label2.innerText='<span class="text-success">Resistencia</span>';
+        label1.innerHTML='<span class="text-success">Intensidad</span>';
+        label2.innerHTML='<span class="text-success">Resistencia</span>';
         
     }
 }
