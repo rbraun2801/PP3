@@ -12,4 +12,5 @@ const {gmail,outlook}=empleados.correo
 
 console.log(`
     ${gmail}
+    ${outlook}
 `)
