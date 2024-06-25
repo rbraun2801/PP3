@@ -4,7 +4,7 @@ async function getData(){
     await fetch(url)
         .then(response=>response.json())
         .then(data=>setData(data))
-        .catch(error=>alert("HUBO UN ERROR AL CARGAR"))
+        .catch(error=> alert("HUBO UN ERROR AL CARGAR: "+error ))
     }        
 
     const setData= (data)=> {
