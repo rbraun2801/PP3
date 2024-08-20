@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es_AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-light bg-white">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="img/BRaun.png" alt="" width="20%" height="6%"  class="d-inline-block align-text-middle">
+                   Concesionario
+                  </a>
+                </div>
+              </nav>
+        </header>
+        <div class="row mt-3">
+            <div class="col-4">
+                <div class="card">
+                    <h6 class="card-header">Carga de pago</h6>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" placeholder="Ingrese nombre">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Apellido</label>
+                                    <input type="text" class="form-control" placeholder="Ingrese apellido">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">DNI</label>
+                                    <input type="number" class="form-control" placeholder="Ingrese DNI">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Correo</label>
+                                    <input type="email" class="form-control" placeholder="Ingrese correo">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Fecha de compra</label>
+                                    <input type="date" class="form-control" placeholder="Ingrese Fecha">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Seleccion de vehiculo</label>
+                                    <select class="form-select" name="vehiculos" id="slt_vehiculos">
+                                        <option value="0">FORD KA</option>
+                                        <option value="1">FORD FIESTA</option>
+                                        <option value="2">FORD FOCUS</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button id="btn_calcular" class="btn btn-success">Calcular Valor</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="card">
+                    <h6 class="card-header">Vehiculos Disponibles</h6>
+                    <div class="card-body">
+                        <table class="table al">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Año</th>
+                                <th>Valor</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>FORD</td>
+                                    <td>KA</td>
+                                    <td>2016</td>
+                                    <td>$10.700.000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>FORD</td>
+                                    <td>FIESTA</td>
+                                    <td>2019</td>
+                                    <td>$15.350.000 </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>FORD</td>
+                                    <td>FOCUS</td>
+                                    <td>2020</td>
+                                    <td>$18.500.000 </td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+                <h4 class="text-center">VALOR CON DESCUENTO DEL VEHICULO SELECCIONADO:</h4>
+                <h1 class="text-center" id="h1_precio"></h1>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
