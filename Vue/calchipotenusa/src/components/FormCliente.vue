@@ -1,55 +1,43 @@
 <template>
 
   <div  class="contanier-fluid">
-    <div class="row">
-      <div class="col-4">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-          </div>
+    <div class="row justify-content-center">
+      <form style="width: 26rem;">
+  <!-- Name input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="text" id="form4Example1" class="form-control" />
+    <label class="form-label" for="form4Example1">Name</label>
+  </div>
+
+  <!-- Email input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <input type="email" id="form4Example2" class="form-control" />
+    <label class="form-label" for="form4Example2">Email address</label>
+  </div>
+
+  <!-- Message input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+    <label class="form-label" for="form4Example3">Message</label>
+  </div>
+
+      <!-- Checkbox -->
+      <div class="form-check d-flex justify-content-center mb-4">
+          <input
+            class="form-check-input me-2"
+            type="checkbox"
+            value=""
+            id="form4Example4"
+            checked
+          />
+          <label class="form-check-label" for="form4Example4">
+      Send me a copy of this message
+          </label>
         </div>
-        <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-              Check me out
-            </label>
-          </div>
-        </div>
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </div>
+
+        <!-- Submit button -->
+        <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Send</button>
+      </form> 
     </div>
   </div>
 
