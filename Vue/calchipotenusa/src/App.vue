@@ -8,7 +8,7 @@
       <div class="navbar-nav mx-auto">
         <router-link class="nav-item nav-link" to="/">INICIO</router-link>
         <router-link class="nav-item nav-link" to="/cliente">CLIENTES</router-link> 
-        <router-link class="nav-item nav-link" to="/pitagoras">CLIENTES</router-link> 
+        <router-link class="nav-item nav-link" to="/pitagoras">PITAGORAS</router-link> 
       </div>
     </div>
   </nav>
