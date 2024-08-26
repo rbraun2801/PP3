@@ -16,6 +16,11 @@ const routes = [
     path: '/pitagoras',
     name: 'Pitagoras',
     component:()=> import ('../views/Pitagoras.vue')
+  },
+  {
+    path: '/catalogo',
+    name: 'Catalogo',
+    component:()=> import ('../views/CatalogoView.vue')
   }
 ]
 
