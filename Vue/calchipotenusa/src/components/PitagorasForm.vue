@@ -15,11 +15,11 @@
 
       <div class="col-auto text-center">
         <div class="mb-2">
-            <h5>Resultado:</h5>
-            <span class="form-label">{{resultado}}</span>
+            <h4>Resultado:</h4>
+            <h5 class="form-label">{{resultado}}</h5>
         </div>
         <div class="mt-5">
-            <button @click="Calcular()" class="btn btn-success">Calcular</button>
+            <button @click="Calcular()" class="btn btn-primary">Calcular</button>
         </div>
       </div>
 
