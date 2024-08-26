@@ -4,22 +4,22 @@
 
       <div class="col-auto text-center">
         <div class="mb-2">
-          <label id="label1" class="form-label">Lado B</label>
-          <input id="inp_d1" type="number" class="form-control">
+          <label id="label1" class="form-label">Lado A</label>
+          <input v-model.number="ladoA" type="number" class="form-control">
         </div>
         <div class="mb-2">
-            <label id="label1" class="form-label">Lado A</label>
-            <input id="inp_d1" type="number" class="form-control">
+            <label id="label1" class="form-label">Lado B</label>
+            <input v-model.number="ladoB" type="number" class="form-control">
         </div>
       </div>
 
       <div class="col-auto text-center">
         <div class="mb-2">
-            <label class="form-label">Resultado</label>
-            <input type="text" id="resultado" class="form-control text-center" disabled>
+            <label class="form-label">Resultado: {{ hipotenusa }}</label>
+            
         </div>
         <div class="mb-3">
-            <button id="btn_calcular" class="btn btn-success">Calcular</button>
+            <button @click="Calcular()" class="btn btn-success">Calcular</button>
         </div>
       </div>
 
@@ -31,10 +31,23 @@
 
 <script>
 /* eslint-disable */
+import {ref} from 'vue'
 export default {
   name: 'FormCliente',
   setup() {
-    
+    //variables
+    let ladoA= ref('')
+    let ladoB= ref('')
+    let hipotenusa
+    function Calcular() {
+      hipotenusa= (ladoA.value*ladoA.value)+(ladoB.value*ladoB.value)
+    }
+    return{
+      Calcular,
+      ladoA,
+      ladoB,
+      hipotenusa
+    }
   }
 }
 </script>
