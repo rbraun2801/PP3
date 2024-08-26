@@ -15,10 +15,10 @@
 
       <div class="col-auto text-center">
         <div class="mb-2">
-            <label class="form-label">Resultado: {{ hipotenusa }}</label>
+            <span class="form-label">Resultado: {{ resultado }}</span>
             
         </div>
-        <div class="mb-3">
+        <div class="mt-3">
             <button @click="Calcular()" class="btn btn-success">Calcular</button>
         </div>
       </div>
@@ -38,15 +38,16 @@ export default {
     //variables
     let ladoA= ref('')
     let ladoB= ref('')
-    let hipotenusa
+    let resultado
     function Calcular() {
-      hipotenusa= (ladoA.value*ladoA.value)+(ladoB.value*ladoB.value)
+      resultado= (ladoA.value*ladoA.value)+(ladoB.value*ladoB.value)
+      
     }
     return{
       Calcular,
       ladoA,
       ladoB,
-      hipotenusa
+      resultado
     }
   }
 }
