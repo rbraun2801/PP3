@@ -16,7 +16,7 @@ router.post('/cliente', async (req,res) => {
     await db.query(`insert into clientes(nombre,apellido,dni)
         values('${unCliente.nombre}','${unCliente.apellido}',${unCliente.dni})`)
     res.json('El cliente se inserto exitosamente')
-})
+  })
 
 router.put('/cliente/:id', async (req, res) => {
   const db = await conexion.obtener_conexion()

@@ -1,54 +1,137 @@
 <template>
 
-  <div  class="contanier-fluid">
-    <div class="row justify-content-center">
+  <div  class="row">
+    <div class="col-4 ms-4 pt-3">
+      <h5>Formulario</h5>
       <form style="width: 26rem;">
-      <!-- Name input -->
+      <!-- Nombre input -->
       <div  class="form-outline mb-4">
-        <input type="text" id="form4Example1" class="form-control" />
-        <label class="form-label" for="form4Example1">Name</label>
+        <input type="text" v-model="nombre" class="form-control" />
+        <label class="form-label" for="form4Example1">Nombre</label>
       </div>
 
-      <!-- Email input -->
+      <!-- Apellido input -->
       <div class="form-outline mb-4">
-        <input type="email" id="form4Example2" class="form-control" />
-        <label class="form-label" for="form4Example2">Email address</label>
+        <input type="email" v-model="apellido" class="form-control" />
+        <label class="form-label" for="form4Example2">Apellido</label>
       </div>
 
       <!-- Message input -->
       <div class="form-outline mb-4">
-        <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-        <label class="form-label" for="form4Example3">Message</label>
+        <input type="number" maxlength="8" class="form-control" v-model.number="dni">
+        <label class="form-label" for="form4Example3">DNI</label>
       </div>
 
-      <!-- Checkbox -->
-      <div class="form-check d-flex justify-content-center mb-4">
-          <input
-            class="form-check-input me-2"
-            type="checkbox"
-            value=""
-            id="form4Example4"
-            checked
-          />
-          <label class="form-check-label" for="form4Example4">
-      Enviarme una copia del mensaje
-          </label>
-        </div>
 
         <!-- Submit button -->
-        <button type="button" class="btn btn-primary btn-block mb-4">Send</button>
+         <div v-if="estado==0">
+          <button type="button" @click="guardarCliente()" class="btn btn-primary btn-block mb-4">Cargar</button>
+         </div>
+        <div v-if="estado==1">
+          <button type="button" @click="actualizarCliente()" class="btn btn-primary btn-block mb-4" >Actualizar</button>
+        </div>
+        
       </form> 
     </div>
+    <div class="col-7 ms-3 pt-3">
+          <h5 class="card-header">Clientes</h5>
+            <table class="table al">
+               <thead>
+                 <tr>
+                   <th>Nombre</th>
+                   <th>Apellido</th>
+                   <th>DNI</th>
+                   <th>Accion</th>
+                 </tr>
+               </thead>
+               <tbody>
+                   <tr v-for="c of lista" v-bind:key="c.id_cliente">
+                       <td class="align-middle">{{ c.nombre }}</td>
+                       <td class="align-middle">{{ c.apellido }}</td>
+                       <td class="align-middle">{{ c.dni }}</td>
+                       <td class="align-middle">
+                         <button @click="eliminarCliente(c.id_cliente)" class="btn btn-danger btn-sm">X</button>
+                         <button @click="updateCliente(c)" class="btn btn-success btn-sm mx-2">edit</button>
+                       </td>
+                   </tr>
+               </tbody>
+             </table>
+    </div>
   </div>
+
+  
 
 </template>
 
 <script>
+
 /* eslint-disable*/
 export default {
   name: 'FormCliente',
-  setup() {
-    
+  data() {
+    return{
+      id:null,
+      nombre:'',
+      apellido:'',
+      dni:null,
+      lista:[],
+      estado:0
+    }
+  },
+  methods:{
+    vaciar(){
+        this.nombre='';
+        this.apellido='';
+        this.dni=null
+
+      },
+    guardarCliente(){
+      const unCliente={
+        nombre: this.nombre,
+        apellido:this.apellido,
+        dni:this.dni
+      }
+      this.axios.post("http://localhost:3002/cliente",unCliente).then( result => {
+        alert(result.data)
+        this.vaciar()
+        this.listarClientes()
+      })
+    },
+
+    listarClientes(){
+      this.axios.get("http://localhost:3002/clientes").then( result =>{
+        this.lista=result.data;
+      })
+      },
+      eliminarCliente(id){
+        this.axios.delete("http://localhost:3002/cliente/"+id).then( result =>{
+            alert(result.data)
+            this.listarClientes()
+        })
+      },
+      updateCliente(unCliente){
+        this.estado=1;
+        this.nombre=unCliente.nombre
+        this.apellido=unCliente.apellido
+        this.dni=unCliente.dni
+        this.id=unCliente.id_cliente
+      },
+      actualizarCliente(){
+        const clienteModificado={
+          nombre:this.nombre,
+          apellido:this.apellido,
+          dni:this.dni
+        }
+        this.axios.put("http://localhost:3002/cliente/"+this.id, clienteModificado).then(result=>{
+          alert(result.data)
+          this.listarClientes()
+          this.vaciar()
+          this.estado=0
+        })
+      }
+    },
+  mounted(){
+    this.listarClientes()
   }
 }
 </script>

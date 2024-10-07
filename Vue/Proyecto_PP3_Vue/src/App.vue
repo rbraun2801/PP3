@@ -7,9 +7,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav mx-auto">
         <router-link class="nav-item nav-link" to="/home">INICIO</router-link>
-        <router-link class="nav-item nav-link" to="/cliente">CLIENTES</router-link> 
+        <router-link class="nav-item nav-link" to="/cliente">CARGA CLIENTES</router-link> 
         <router-link class="nav-item nav-link" to="/pitagoras">PITAGORAS</router-link> 
-        <router-link class="nav-item nav-link" to="/catalogo">CATALOGO</router-link> 
+        <router-link class="nav-item nav-link" to="/catalogo">CATALOGO</router-link>
       </div>
     </div>
   </nav>
