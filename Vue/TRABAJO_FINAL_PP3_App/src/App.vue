@@ -8,6 +8,8 @@
       <div class="navbar-nav mx-auto">
         <router-link class="nav-item nav-link" to="/home">INICIO</router-link>
         <router-link class="nav-item nav-link" to="/cliente">CARGA CLIENTES</router-link> 
+        <router-link class="nav-item nav-link" to="/modificar">MODIFICAR CLIENTES</router-link>
+        <router-link class="nav-item nav-link" to="/monitoreo">monitoreo</router-link>
       </div>
     </div>
   </nav>

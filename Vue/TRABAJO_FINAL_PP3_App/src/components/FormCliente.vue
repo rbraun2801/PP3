@@ -1,5 +1,5 @@
 <template>
-
+  <Modifcar></Modifcar>
   <div  class="row">
     <div class="col-4 ms-4 pt-3">
       <h5>Formulario</h5>
@@ -33,30 +33,7 @@
         
       </form> 
     </div>
-    <div class="col-7 ms-3 pt-3">
-          <h5 class="card-header">Clientes</h5>
-            <table class="table al">
-               <thead>
-                 <tr>
-                   <th>Nombre</th>
-                   <th>Apellido</th>
-                   <th>DNI</th>
-                   <th>Accion</th>
-                 </tr>
-               </thead>
-               <tbody>
-                   <tr v-for="c of lista" v-bind:key="c.id_cliente">
-                       <td class="align-middle">{{ c.nombre }}</td>
-                       <td class="align-middle">{{ c.apellido }}</td>
-                       <td class="align-middle">{{ c.dni }}</td>
-                       <td class="align-middle">
-                         <button @click="eliminarCliente(c.id_cliente)" class="btn btn-danger btn-sm">X</button>
-                         <button @click="updateCliente(c)" class="btn btn-success btn-sm mx-2">edit</button>
-                       </td>
-                   </tr>
-               </tbody>
-             </table>
-    </div>
+    
   </div>
 
   
@@ -64,16 +41,21 @@
 </template>
 
 <script>
-
+import Modifcar from './Modifcar.vue';
 /* eslint-disable*/
 export default {
+  components:{
+    Modifcar,
+  },
   name: 'FormCliente',
   data() {
     return{
       id:null,
-      nombre:'',
-      apellido:'',
-      dni:null,
+      razon_social:'',
+      telefono:'',
+      direccion_ip:'',
+      descripcion_equipo:'',
+      sistema_operativo:'',
       lista:[],
       estado:0
     }
@@ -81,57 +63,26 @@ export default {
   methods:{
     vaciar(){
         this.nombre='';
-        this.apellido='';
-        this.dni=null
-
+        this.razon_social='';
+        this.direccion_ip='';
+        this.telefono='';
+        this.descripcion_equipo='';
+        this.sistema_operativo='';
       },
     guardarCliente(){
       const unCliente={
-        nombre: this.nombre,
-        apellido:this.apellido,
-        dni:this.dni
+        razon_social: this.razon_social,
+        telefono:this.telefono,
+        direccion_ip:this.direccion_ip,
+        descripcion_equipo:this.descripcion_equipo,
+        sistema_operativo:this.sistema_operativo
       }
-      this.axios.post("http://localhost:3002/cliente",unCliente).then( result => {
+      this.axios.post("http://localhost:3000/cliente",unCliente).then( result => {
         alert(result.data)
         this.vaciar()
         this.listarClientes()
       })
     },
-
-    listarClientes(){
-      this.axios.get("http://localhost:3002/clientes").then( result =>{
-        this.lista=result.data;
-      })
-      },
-      eliminarCliente(id){
-        this.axios.delete("http://localhost:3002/cliente/"+id).then( result =>{
-            alert(result.data)
-            this.listarClientes()
-        })
-      },
-      updateCliente(unCliente){
-        this.estado=1;
-        this.nombre=unCliente.nombre
-        this.apellido=unCliente.apellido
-        this.dni=unCliente.dni
-        this.id=unCliente.id_cliente
-      },
-      actualizarCliente(){
-        const clienteModificado={
-          nombre:this.nombre,
-          apellido:this.apellido,
-          dni:this.dni
-        }
-        this.axios.put("http://localhost:3002/cliente/"+this.id, clienteModificado).then(result=>{
-          alert(result.data)
-          this.listarClientes()
-          this.vaciar()
-          this.estado=0
-        })
-      }
-    },
-  mounted(){
-    this.listarClientes()
   }
 }
 </script>

@@ -1,5 +1,5 @@
 {
-  "name": "vue_pp3",
+  "name": "Monitoreo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,8 @@
     "axios": "^1.7.7",
     "bootswatch": "^5.3.3",
     "core-js": "^3.8.3",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
     "vue": "^3.2.13",
     "vue-axios": "^3.5.2",
     "vue-router": "^4.0.3"

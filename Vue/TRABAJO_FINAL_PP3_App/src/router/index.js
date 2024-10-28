@@ -11,6 +11,16 @@ const routes = [
     path: '/cliente',
     name: 'cliente',
     component:()=> import ('../views/ClienteView.vue')
+  },
+  {
+    path: '/modificar',
+    name: 'modificar',
+    component:()=> import('../views/ModificarView.vue')
+  },
+  {
+    path:'',
+    name:'',
+    component:()=>import('../views/SocketView.vue')
   }
 ]
 
