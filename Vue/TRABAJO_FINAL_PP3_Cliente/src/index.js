@@ -1,8 +1,10 @@
 const express = require('express')
 const cors = require('cors')
 const socketio= require('socket.io')
+const osu = require('node-os-utils')
 
 const server= express()
+const cpu= osu.cpu
 
 server.set('port', process.env.PORT || 3000)
 
@@ -17,7 +19,14 @@ const io= socketio(servidor)
 io.on('connect', socket =>{
 
     setInterval(()=>{
-        socket.emit('dato', Math.random())
+        socket.emit('infoPc', {cpuUso:cpu.usage(),
+            cpuLibre: cpu.free(),
+            disco: drive.info(),
+            memLibre: mem.free(),
+            memUsada: mem.used(),
+            red: netstat.stats()
+        
+        })
     },1000)
     
 })
